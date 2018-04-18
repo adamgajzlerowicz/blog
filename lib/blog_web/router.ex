@@ -17,6 +17,11 @@ defmodule BlogWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
+  end
+
+  scope "/"  do
+    pipe_through :api
     forward "/graphiql", Absinthe.Plug.GraphiQL,
             schema: BlogWeb.Schema
   end
