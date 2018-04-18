@@ -1,4 +1,4 @@
-# Blog
+# Graphql wrapper for blog app
 
 To start your Phoenix server:
 
