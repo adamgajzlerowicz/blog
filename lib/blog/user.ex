@@ -7,7 +7,7 @@ defmodule Blog.User do
     field :email, :string
     field :name, :string
     field :password, :string
-    has_many :posts, Blog.Post
+#    has_many :posts, Blog.Post
     timestamps()
   end
 
