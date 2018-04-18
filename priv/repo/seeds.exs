@@ -1,11 +1,35 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     Blog.Repo.insert!(%Blog.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+adam = Blog.Repo.insert! %Blog.User{
+  name: "adam",
+  password: "123",
+  email: "foo@bar.com"
+}
+
+natka = Blog.Repo.insert! %Blog.User{
+  name: "natka",
+  password: "123",
+  email: "blah@yarn.narn"
+}
+
+Blog.Repo.insert! %Blog.Post{
+  content: "lorem ipsum",
+  title: "Post 1",
+  user_id: adam.id
+}
+
+Blog.Repo.insert! %Blog.Post{
+  content: "lorem ipsum",
+  title: "Post 2",
+  user_id: adam.id
+}
+
+Blog.Repo.insert! %Blog.Post{
+  content: "lorem ipsum",
+  title: "Post 3",
+  user_id: natka.id
+}
+
+Blog.Repo.insert! %Blog.Post{
+  content: "lorem ipsum",
+  title: "Post 3",
+  user_id: adam.id
+}
