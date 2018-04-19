@@ -12,5 +12,6 @@ defmodule BlogWeb.Schema.Types do
   object :post do
     field :content, :string
     field :title, :string
+    field :user, :user, resolve: assoc :user
   end
 end
